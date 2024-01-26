@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="icon" href="icon.png" type="image/x-icon">
+
     <style>
+
             .container-enmedio {
             height: 100vh;
             display: flex;
@@ -14,6 +16,7 @@
             justify-content: center;
             margin: 0;
             }
+
            .card {
             border: 2px solid #007BFF;
             border-radius: 15px;
@@ -21,6 +24,7 @@
             padding: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .card-img-top {
             border-radius: 50%;
             width: 150px;
@@ -28,35 +32,43 @@
             margin: 0 auto;
             object-fit: cover;
         }
+
         .card-title {
             font-size: 1.5rem;
             margin-top: 10px;
         }
+
         .card-text {
             font-size: 1rem;
             color: #6C757D;
         }
+
         .card-text-bg-primary {
             background-color: #007BFF;
             padding: 10px;
             border-radius: 10px;
             color: white;
         }
+
         .btn-warning {
             color: #212529;
             background-color: #ffc107;
             border-color: #ffc107;
         }
+
         .card{
             margin: 10px;
         }
+
         .cuadro{
             margin: auto;
             display: flex;
             justify-content: center;
             align-items: center;
+
             align-items: center;
         }
+        
     </style>
 </head>
 <body style="min-height: 100vh;">
@@ -74,9 +86,18 @@
             </ul>
           </div>
     </div>
+
+
+
         <div id="contenedorTarjetas" class="row row-cols-1 row-cols-md-3 g-4"></div>
+
+
+
+
+
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
+
 <script>
        const pokemon1 = () =>{
         const pokemonRandom = Math.floor(Math.random() * 1000) + 1;
@@ -90,29 +111,41 @@
                             document.getElementById("nombre").innerHTML = "Nombre del pokemon: " + datos.name;
                             document.getElementById("altura").innerHTML = "Altura: " + datos.height;
                             document.getElementById("peso").innerHTML = "Peso: " + datos.weight;
+                            
+
                     var card = document.createElement("div");
                     card.className = "card";
                     card.style.width = "18rem";
+
+
                     var img = document.createElement("img");
                     img.className = "card-img-top";
                     img.src = datos.sprites.front_default;
                     img.id = "pokemonImg";
+
                     var cardBody = document.createElement("div");
                     cardBody.className = "card-body";
+
                     var nombre = document.createElement("h5");
                     nombre.className = "card-title";
                     nombre.id = "nombre";
                     nombre.innerText = "Nombre: " + datos.name;
+
                     var listGroup = document.createElement("ul");
                     listGroup.className = "list-group list-group-flush";
+
+
                     var altura = document.createElement("li");
                     altura.className = "list-group-item";
                     altura.id = "altura";
                     altura.innerText = "Altura: " + datos.height;
+
                     var peso = document.createElement("li");
                     peso.className = "list-group-item";
                     peso.id = "peso";
                     peso.innerText = "Peso: " + datos.weight;
+
+
                     cardBody.appendChild(nombre);
                     listGroup.appendChild(altura);
                     listGroup.appendChild(peso);
@@ -120,8 +153,15 @@
                     card.appendChild(cardBody);
                     card.appendChild(listGroup);
 
+
                     var contenedorTarjetas = document.getElementById("contenedorTarjetas");
-                    contenedorTarjetas.appendChild(card);                      
+                    contenedorTarjetas.appendChild(card);
+                                
+                        
+
+                              
+
+                                
       })
       .catch(error => {
         console.log(error);
